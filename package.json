@@ -1,0 +1,20 @@
+{
+  "name": "web-kalkulator",
+  "version": "1.0.0",
+  "description": "Web-kalkulator for 2ITB Tangen",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doub0/web-kalkulator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doub0/web-kalkulator/issues"
+  },
+  "homepage": "https://github.com/Doub0/web-kalkulator#readme"
+}
