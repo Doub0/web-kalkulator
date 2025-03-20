@@ -1,34 +1,99 @@
-<div id="fakultet">
-    <form>
-        <input name="tall" placeholder="Tall" type="number">
-        <button>Regn ut fakultet</button>
-    </form>
-    <p>
-        Resultatet er: <span class="resultat"></span>
-    </p>
-</div>
+<!-- OPPGAVE 1 - Fakultet -->
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
 
-<script type="module">
-    import {fakultet} from './fakultet.js'
+<body>
+    <div id="fakultet">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut fakultet</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
 
-    function regnUt(evt) {
-        // For å forhindre at nettleseren sender skjemaet:
-        evt.preventDefault()
-    
-        // Vi bruker querySelector for å finne elementene vi trenger:
-        // "#fakultet input" betyr "input-felt i elementet med id 'fakultet'
-        // "#fakultet .resultat" betyr "element med class 'resultat' i
-        //    elementet med id 'fakultet'
-        const input = document.querySelector('#fakultet input')
-        const output = document.querySelector('#fakultet .resultat')
-    
-        // parseInt konverterer en streng til et heltall
-        const tall = parseInt(input.value)
-    
-        output.textContent = fakultet(tall)
+    <script type="module">
+        import {fakultet} from './fakultet.js'
+
+        function regnUt(evt) {
+            evt.preventDefault()
+        
+            const input = document.querySelector('#fakultet input')
+            const output = document.querySelector('#fakultet .resultat')
+        
+            const tall = parseInt(input.value)
+        
+            output.textContent = fakultet(tall)
+        }
+
+        document.querySelector('#fakultet button')
+            .addEventListener('click', e => regnUt(e))</script> 
+
+    <!-- OPPGAVE 2 - FizzBuzz -->
+    <div id="fizzBuzz">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut fizzBuzz</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
+
+    <script type="module">
+
+        import {fizzBuzz} from './fizzbuzz.js'
+
+    function regnUtFB(evt) {
+
+    evt.preventDefault()
+
+    const input = document.querySelector('#fizzBuzz input')
+    const output = document.querySelector('#fizzBuzz .resultat')
+
+    const tall = parseInt(input.value)
+
+    output.textContent = fizzBuzz(tall)
     }
-    
-    // Vi legger til en "event listener" som kjører regnUt-funksjonen når
-    // vi trykker på en knapp (button) i elementet med id 'fakultet'
-    document.querySelector('#fakultet button')
-        .addEventListener('click', e => regnUt(e))</script> 
+
+    document.querySelector('#fizzBuzz button')
+        .addEventListener('click', e => regnUtFB(e))
+    </script>
+
+    <!-- OPPGAVE 3 - Fibonacci -->
+
+    <div id="fibonacci">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut fibonacci</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
+
+    <script type="module">
+
+        import {fibonacci} from './fibonacci.js'
+
+    function regnUtFibonacci(evt) {
+
+    evt.preventDefault()
+
+
+    const input = document.querySelector('#fibonacci input')
+    const output = document.querySelector('#fibonacci .resultat')
+
+    // parseInt konverterer en streng til et heltall
+    const tall = parseInt(input.value)
+
+    output.textContent = fibonacci(tall)
+    }
+
+
+    document.querySelector('#fibonacci button')
+        .addEventListener('click', e => regnUtFibonacci(e))
+    </script>
+</body>
